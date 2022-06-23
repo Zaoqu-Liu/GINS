@@ -1,3 +1,15 @@
+# Classfy new data
+
+load('data.rda') ## here is an example data, you shold input your data here.
+
+load('Classifier.rda') ## Classifier
+
+GINS = predict(rf, data)
+
+table(GINS)
+
+##########################################################################################################################################################
+
 # GINS
 Gene interaction perturbation network deciphers a high-resolution taxonomy in colorectal cancer
 
@@ -31,25 +43,3 @@ Wilkerson, M.D., and Hayes, D.N. (2010). ConsensusClusterPlus: a class discovery
 R scipt "Perturbation.R" is from https://github.com/Marscolono/SSPGI, which was published in Brief in bioinformatics (PMID: 33126248).
 
 #########################################################################################################################################################
-
-# Classfy new data
-
-load('data.rda') ## here is an example data, you shold input your data here.
-
-load('Classifier.rda') ## Classifier
-
-GINS = predict(rf, data)
-
-table(GINS)
-
-
-
-
-
-
-
-
-
-
-
-
