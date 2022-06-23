@@ -29,3 +29,24 @@ Verhaak, R.G., Hoadley, K.A., Purdom, E., Wang, V., Qi, Y., Wilkerson, M.D., et 
 Wilkerson, M.D., and Hayes, D.N. (2010). ConsensusClusterPlus: a class discovery tool with confidence assessments and item tracking. Bioinformatics 26(12), 1572-1573. doi: 10.1093/bioinformatics/btq170.
 
 R scipt "Perturbation.R" is from https://github.com/Marscolono/SSPGI, which was published in Brief in bioinformatics (PMID: 33126248).
+
+#########################################################################################################################################################
+
+# Classfy new data
+
+load('data.rda') ## here is an example data, you shold input your data here.
+load('Classifier.rda') ## Classifier
+GINS = predict(rf, data)
+table(GINS)
+
+
+
+
+
+
+
+
+
+
+
+
