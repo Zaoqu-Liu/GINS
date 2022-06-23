@@ -35,8 +35,11 @@ R scipt "Perturbation.R" is from https://github.com/Marscolono/SSPGI, which was 
 # Classfy new data
 
 load('data.rda') ## here is an example data, you shold input your data here.
+
 load('Classifier.rda') ## Classifier
+
 GINS = predict(rf, data)
+
 table(GINS)
 
 
