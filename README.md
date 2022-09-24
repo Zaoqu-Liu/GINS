@@ -32,13 +32,21 @@ All data processing, statistical analysis, and plotting were conducted in R 4.0.
 
 ## References
 Chen, Y., Gu, Y., Hu, Z., and Sun, X. (2021). Sample-specific perturbation of gene interactions identifies breast cancer subtypes. Brief Bioinform 22(4). doi: 10.1093/bib/bbaa268.
+
 Jassal, B., Matthews, L., Viteri, G., Gong, C., Lorente, P., Fabregat, A., et al. (2020). The reactome pathway knowledgebase. Nucleic Acids Res 48(D1), D498-D503. doi: 10.1093/nar/gkz1031.
+
 Sahni, N., Yi, S., Taipale, M., Fuxman Bass, J.I., Coulombe-Huntington, J., Yang, F., et al. (2015). Widespread macromolecular interaction perturbations in human genetic disorders. Cell 161(3), 647-660. doi: 10.1016/j.cell.2015.04.013.
+
 Senbabaoglu, Y., Michailidis, G., and Li, J.Z. (2014). Critical limitations of consensus clustering in class discovery. Sci Rep 4, 6207. doi: 10.1038/srep06207.
+
 Tibshirani, R., Hastie, T., Narasimhan, B., and Chu, G. (2002). Diagnosis of multiple cancer types by shrunken centroids of gene expression. Proc Natl Acad Sci U S A 99(10), 6567-6572. doi: 10.1073/pnas.082099299.
+
 Tusher, V.G., Tibshirani, R., and Chu, G. (2001). Significance analysis of microarrays applied to the ionizing radiation response. Proc Natl Acad Sci U S A 98(9), 5116-5121. doi: 10.1073/pnas.091062498.
+
 Verhaak, R.G., Hoadley, K.A., Purdom, E., Wang, V., Qi, Y., Wilkerson, M.D., et al. (2010). Integrated genomic analysis identifies clinically relevant subtypes of glioblastoma characterized by abnormalities in PDGFRA, IDH1, EGFR, and NF1. Cancer Cell 17(1), 98-110. doi: 10.1016/j.ccr.2009.12.020.
+
 Wilkerson, M.D., and Hayes, D.N. (2010). ConsensusClusterPlus: a class discovery tool with confidence assessments and item tracking. Bioinformatics 26(12), 1572-1573. doi: 10.1093/bioinformatics/btq170.
+
 
 R scipt "Perturbation.R" is from https://github.com/Marscolono/SSPGI, which was published in Brief in bioinformatics (PMID: 33126248).
 
