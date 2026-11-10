@@ -1,17 +1,37 @@
-# Classfy new data
-
-load('data.rda') ## here is an example data, you shold input your data here.
-
-load('Classifier.rda') ## Classifier
-
-GINS = predict(rf, data)
-
-table(GINS)
-
-##########################################################################################################################################################
-
 # GINS
-Gene interaction perturbation network deciphers a high-resolution taxonomy in colorectal cancer
+
+Code and trained classifier for **gene interaction network-based subtypes (GINS)** of colorectal cancer (CRC). An individual-specific gene interaction perturbation network is built by comparing each tumor sample against normal samples on a Reactome-derived background network. Consensus clustering of the resulting interaction-perturbation matrix defines six subtypes (GINS1-6), and a random forest classifier assigns GINS to new expression data.
+
+## Citation
+
+Liu Z, Weng S, Dang Q, Xu H, Ren Y, Guo C, Xing Z, Sun Z, Han X. Gene interaction perturbation network deciphers a high-resolution taxonomy in colorectal cancer. *eLife* 2022;11:e81114. doi: [10.7554/eLife.81114](https://doi.org/10.7554/eLife.81114)
+
+## Repository contents
+
+| File | Purpose |
+| --- | --- |
+| `Main.R` | Pipeline: rank and delta-rank matrices, interaction-perturbation matrix, feature selection, consensus clustering, survival analysis |
+| `Perturbation.R` | Helper functions (`rank.matrix`, `delta.rank`, `EPm`, ...) taken from [SSPGI](https://github.com/Marscolono/SSPGI) |
+| `Background.network.txt`, `Reactom.Rdata` | Background gene-interaction network and Reactome pathway data |
+| `Tumor-data.rda`, `Normal-data.rda` | Expression matrices loaded by `Main.R` (100 genes; 2,167 tumor and 308 normal samples) |
+| `Classifier.rda` | Trained random forest classifier (`rf`, 14 genes, classes GINS1-6) |
+| `data.rda` | Example input for the classifier (180 samples x 14 genes) |
+
+## Classify new data
+
+Requires the `randomForest` package. `data` is a samples-by-genes data frame whose columns are the 14 classifier genes (`colnames(data)` in the bundled example); replace it with your own matrix in the same layout.
+
+```r
+library(randomForest)
+
+load('data.rda')       # example data; supply your own expression data here
+load('Classifier.rda') # random forest classifier `rf`
+
+GINS <- predict(rf, data)
+table(GINS)
+```
+
+On the bundled example this assigns 30 samples to each of GINS1-6.
 
 ## Background network
 The gene interaction-perturbation pipeline applies the discovery cohort as the tumor sample input and the GTEx cohort as the normal sample input. A pathway-derived analysis requires constructing the protein interaction functional networks projected by candidate genes(Chen et al., 2021). Data from the Reactome Pathway Database (https://reactome.org) focus on the reaction, which were utilized to establish the biological interaction networks(Jassal et al., 2020). Network nodes that absented in our cohorts were removed and existing nodes were integrated into the large background network with 148942 interactions in total.
@@ -48,6 +68,4 @@ Verhaak, R.G., Hoadley, K.A., Purdom, E., Wang, V., Qi, Y., Wilkerson, M.D., et 
 Wilkerson, M.D., and Hayes, D.N. (2010). ConsensusClusterPlus: a class discovery tool with confidence assessments and item tracking. Bioinformatics 26(12), 1572-1573. doi: 10.1093/bioinformatics/btq170.
 
 
-R scipt "Perturbation.R" is from https://github.com/Marscolono/SSPGI, which was published in Brief in bioinformatics (PMID: 33126248).
-
-#########################################################################################################################################################
+R script "Perturbation.R" is from https://github.com/Marscolono/SSPGI, which was published in Brief in bioinformatics (PMID: 33126248).
